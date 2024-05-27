@@ -9,6 +9,7 @@ import java.time.Duration;
 public class TestCase3 {
     public static void main(String[] args) {
         WebDriver driver = new ChromeDriver();
+        driver.manage().window().maximize();
         driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(10));
         driver.get("http://automationexercise.com");
 

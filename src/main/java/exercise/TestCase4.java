@@ -6,10 +6,9 @@ import org.openqa.selenium.chrome.ChromeDriver;
 
 import java.time.Duration;
 
-public class TestCase2 {
+public class TestCase4 {
     public static void main(String[] args) {
-        String username ="testing11234";
-
+        String username = "testing11234";
         WebDriver driver = new ChromeDriver();
         driver.manage().window().maximize();
         driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(10));
@@ -17,19 +16,18 @@ public class TestCase2 {
 
         String ExpectedTitle = "Automation Exercise";
         String ActualTitle = driver.getTitle();
-        if(ExpectedTitle.equalsIgnoreCase(ActualTitle)){
-            System.out.println("Home Page is Visible succesffuly");
-        }
-        else {
+        if (ExpectedTitle.equalsIgnoreCase(ActualTitle)) {
+            System.out.println("Home Page is Visible");
+        } else {
             System.out.println("Home Page is Not Visible");
         }
+
         driver.findElement(By.xpath("//a[text()=' Signup / Login']")).click();
 
         boolean verify = driver.findElement(By.xpath("//h2[text()='Login to your account']")).isDisplayed();
-        if(verify){
+        if (verify) {
             System.out.println("Login to your account is Displayed");
-        }
-        else {
+        } else {
             System.out.println("Login to your account is not Displayed");
         }
 
@@ -37,25 +35,22 @@ public class TestCase2 {
         driver.findElement(By.xpath("//input[@data-qa='login-password']")).sendKeys("testing");
         driver.findElement(By.xpath("//button[@data-qa='login-button']")).click();
 
-        boolean verify3 = driver.findElement(By.xpath("//a[text()=' Logged in as ']//child::b[text()='"+username+"']")).isDisplayed();
-        if(verify3){
+        boolean verify3 = driver.findElement(By.xpath("//a[text()=' Logged in as ']//child::b[text()='" + username + "']")).isDisplayed();
+        if (verify3) {
             System.out.println("Logged in as username is Displayed");
-        }
-        else {
+        } else {
             System.out.println("Logged in as username is not Displayed");
+
         }
+        driver.findElement(By.xpath("//a[text()=' Logout']")).click();
 
-        driver.findElement(By.xpath("//a[text()=' Delete Account']")).click();
-
-        boolean verify4 = driver.findElement(By.xpath("//b[text()='Account Deleted!']")).isDisplayed();
-        if(verify4){
-            System.out.println("Account Deleted! is Displayed");
+        boolean verify1 = driver.findElement(By.xpath("//h2[text()='Login to your account']")).isDisplayed();
+        if(verify1){
+            System.out.println("Login to your account is Displayed");
         }
         else {
-            System.out.println("Account Deleted! is not Displayed");
+            System.out.println("Login to your account is not Displayed");
         }
-        driver.findElement(By.xpath("//a[@data-qa='continue-button']")).click();
-
         driver.close();
     }
 }

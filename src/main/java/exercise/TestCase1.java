@@ -11,6 +11,7 @@ import java.time.Duration;
 public class TestCase1 {
     public static void main(String[] args) {
         WebDriver driver = new ChromeDriver();
+        driver.manage().window().maximize();
         driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(10));
         driver.get("http://automationexercise.com");
         String ExpectedTitle = "Automation Exercise";
@@ -87,16 +88,16 @@ public class TestCase1 {
         else {
             System.out.println("Logged in as username is not Displayed");
         }
-        driver.findElement(By.xpath("//a[text()=' Delete Account']")).click();
-
-        boolean verify4 = driver.findElement(By.xpath("//b[text()='Account Deleted!']")).isDisplayed();
-        if(verify3){
-            System.out.println("Account Deleted! is Displayed");
-        }
-        else {
-            System.out.println("Account Deleted! is not Displayed");
-        }
-        driver.findElement(By.xpath("//a[@data-qa='continue-button']")).click();
+//        driver.findElement(By.xpath("//a[text()=' Delete Account']")).click();
+//
+//        boolean verify4 = driver.findElement(By.xpath("//b[text()='Account Deleted!']")).isDisplayed();
+//        if(verify3){
+//            System.out.println("Account Deleted! is Displayed");
+//        }
+//        else {
+//            System.out.println("Account Deleted! is not Displayed");
+//        }
+//        driver.findElement(By.xpath("//a[@data-qa='continue-button']")).click();
 
 
 
